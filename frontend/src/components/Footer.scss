@@ -1,0 +1,127 @@
+$black: black;
+$white: white;
+$dark-gray: #242323;
+$medium-gray: #4d4d4d;
+$light-gray: #a0a6af;
+$pink: pink;
+$pale-blue: #5454fd;
+
+.Footer {
+  .HeadFoot {
+    background-color: $dark-gray;
+    padding: 40px 5%;
+    display: flex;
+    .FootAdress {
+      list-style-type: none;
+      width: 350px;
+      li {
+        margin-bottom: 10px;
+        i,
+        p,
+        a {
+          display: inline-block;
+          color: $white;
+        }
+        i {
+          text-align: center;
+          width: 50px;
+          line-height: 50px;
+          border-radius: 25px;
+          background-color: $medium-gray;
+          margin-right: 20px;
+        }
+        p {
+          vertical-align: middle;
+          font-size: 18px;
+        }
+        a {
+          font-size: 18px;
+        }
+        &:nth-child(4) a {
+          color: $pale-blue;
+        }
+      }
+    }
+    .FootSocials {
+      width: calc(100% - 350px);
+      padding: 0 40px;
+      color: $white;
+      strong {
+        text-transform: capitalize;
+        font-size: 24px;
+      }
+      p {
+        margin-bottom: 20px;
+      }
+      .Socials {
+        list-style-type: none;
+        font-size: 0;
+        display: flex;
+        justify-content: space-around;
+        li {
+          display: inline-block;
+          a {
+            i {
+              color: $white;
+              font-size: 34px;
+              text-align: center;
+              width: 64px;
+              line-height: 64px;
+              border-radius: 32px;
+              background-color: $medium-gray;
+            }
+            &:after {
+              content: "";
+              display: block;
+              margin-top: 7px;
+              color: transparent;
+              font-size: 16px;
+              font-family: "Lato", sans-serif;
+              transition: all 0.3s;
+            }
+            &#fb::after {
+              content: "Facebook";
+              transform: rotate(-20deg);
+              text-align: center;
+            }
+            &#inst::after {
+              content: "Instagram";
+              transform: rotate(-20deg);
+              text-align: center;
+            }
+            &#gmail::after {
+              content: "Gmail";
+              transform: rotate(-20deg);
+              text-align: center;
+            }
+            &:hover#fb::after,
+            &:hover#inst::after,
+            &:hover#gmail::after {
+              color: $white;
+              transform: scale3d(1.04, 1.04, 1.04);
+            }
+          }
+        }
+      }
+    }
+  }
+  .Foot {
+    text-align: center;
+    border-top: solid 4px $light-gray;
+    padding: 5px 10px;
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      strong {
+        color: $light-gray;
+        font-size: 18px;
+        a {
+          color: $light-gray;
+        }
+      }
+      i {
+        color: $pink;
+      }
+    }
+  }
+}
