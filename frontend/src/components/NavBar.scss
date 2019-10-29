@@ -66,8 +66,18 @@ header {
         position: relative;
         line-height: 36px;
         transition: all 0.7s;
+        outline: 0;
         &.active {
           color: $dark-gray;
+          &:before,
+          &:after {
+            content: "";
+            display: block;
+            width: 170%;
+            height: 1px;
+            background-color: $light-gray;
+            transition: all 0.7s;
+          }
         }
         &:hover {
           color: $black;
