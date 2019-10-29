@@ -40,7 +40,7 @@ class NavBar extends React.Component {
         </div>
 
         <nav className="WebsiteNav">
-          <ul>
+          <ul className="DesktopMenu">
             <li>
               <NavLink activeClassName="active" exact to="/">
                 Home
@@ -65,6 +65,9 @@ class NavBar extends React.Component {
               </NavLink>
             </li>
           </ul>
+          <div className="BurgerMenu">
+            <span></span>
+          </div>
         </nav>
       </header>
     );

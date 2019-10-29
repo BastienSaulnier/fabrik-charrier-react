@@ -4,6 +4,7 @@ $dark-gray: #242323;
 $light-gray: #a0a6af;
 $pink: pink;
 $dark-gray: #242323;
+$alpha-black: rgba(0, 0, 0, 0.5);
 
 header {
   background-color: $white;
@@ -11,7 +12,7 @@ header {
   justify-content: space-between;
   align-items: center;
   position: sticky;
-  z-index: 999;
+  z-index: 2;
   top: 0;
   padding: 5px 10px;
   border-bottom: solid 4px $light-gray;
@@ -54,7 +55,7 @@ header {
 }
 .WebsiteNav {
   width: calc(100% - (10% + 350px));
-  ul {
+  .DesktopMenu {
     list-style-type: none;
     font-size: 16px;
     display: flex;
@@ -106,5 +107,58 @@ header {
         }
       }
     }
+  }
+  .BurgerMenu {
+    display: none;
+    width: 34px;
+    height: 32px;
+    background-color: $alpha-black;
+    border-radius: 5px;
+    padding-top: 14px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    span {
+      margin: 0 auto;
+      display: block;
+      border-radius: 2px;
+      background-color: $white;
+      width: 26px;
+      height: 4px;
+      &:before,
+      &:after {
+        content: "";
+        display: block;
+        width: 26px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $white;
+      }
+      &:before {
+        position: absolute;
+        top: 5px;
+      }
+      &:after {
+        position: absolute;
+        bottom: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 961px) {
+  .center {
+    width: 100%;
+    margin: 0;
+  }
+  header nav.WebsiteNav ul.DesktopMenu {
+    display: none;
+  }
+  header nav.WebsiteNav {
+    display: flex;
+    justify-content: flex-end;
+  }
+  header nav.WebsiteNav div.BurgerMenu {
+    display: block;
   }
 }
