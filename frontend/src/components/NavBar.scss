@@ -6,10 +6,13 @@ $pink: pink;
 $dark-gray: #242323;
 
 header {
+  background-color: $white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
+  z-index: 999;
+  top: 0;
   padding: 5px 10px;
   border-bottom: solid 4px $light-gray;
 }
