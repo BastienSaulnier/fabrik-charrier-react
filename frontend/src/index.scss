@@ -47,7 +47,7 @@ body {
   padding: 0;
   width: 100%;
   display: block;
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 img,
@@ -68,8 +68,14 @@ a {
   text-decoration: none;
   color: black;
 }
+p {
+  font-family: "Rubik", sans-serif;
+}
+strong {
+  font-family: "Lato", serif;
+}
 
-/* ------------------------------- RECURENTES -- */
+/* --RECURSIVES-- */
 .clear {
   display: block;
   zoom: 1;
@@ -85,4 +91,28 @@ a {
 .center {
   width: 960px;
   margin: 0 auto;
+}
+.overlay:after {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.overlay-2:after {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
