@@ -65,7 +65,6 @@ header {
       a {
         color: $light-gray;
         position: relative;
-        line-height: 36px;
         transition: all 0.7s;
         outline: 0;
         &.active {
@@ -78,6 +77,13 @@ header {
             height: 1px;
             background-color: $light-gray;
             transition: all 0.7s;
+            position: absolute;
+          }
+          &:before {
+            top: -6px;
+          }
+          &:after {
+            bottom: -8px;
           }
         }
         &:hover {
@@ -91,13 +97,15 @@ header {
           height: 1px;
           background-color: $light-gray;
           transition: all 0.7s;
+          position: absolute;
         }
         &:before {
-          position: absolute;
+          top: -6px;
           right: 0;
           margin-right: -35%;
         }
         &:after {
+          bottom: -8px;
           margin-left: -35%;
         }
 
