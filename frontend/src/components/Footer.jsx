@@ -45,6 +45,7 @@ class Footer extends React.Component {
                   <a
                     href="https://www.facebook.com/la.fabrik.charrier"
                     target="_blank"
+                    rel="noopener noreferrer"
                     id="fb"
                   >
                     <i className="fab fa-facebook-square"></i>
@@ -54,6 +55,7 @@ class Footer extends React.Component {
                   <a
                     href="https://www.instagram.com/fabrikcharrier/?hl=fr"
                     target="_blank"
+                    rel="noopener noreferrer"
                     id="inst"
                   >
                     <i className="fab fa-instagram"></i>

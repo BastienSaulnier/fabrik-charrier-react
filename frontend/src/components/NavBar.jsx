@@ -18,6 +18,7 @@ class NavBar extends React.Component {
                 <a
                   href="https://www.facebook.com/la.fabrik.charrier"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-facebook-square"></i>
                 </a>
@@ -26,12 +27,13 @@ class NavBar extends React.Component {
                 <a
                   href="https://www.instagram.com/fabrikcharrier/?hl=fr"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
               </li>
               <li>
-                <a href="#" target="_blank">
+                <a href="" target="_blank">
                   <i className="fas fa-envelope-square"></i>
                 </a>
               </li>

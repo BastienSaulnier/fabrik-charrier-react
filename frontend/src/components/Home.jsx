@@ -20,7 +20,8 @@ class Home extends React.Component {
                 <span>E</span>
               </p>
               <strong>
-                sur <a href="#">lafabrikcharrier.com</a>
+                sur{" "}
+                <a href="https://lafabrikcharrier.com">lafabrikcharrier.com</a>
               </strong>
             </div>
           </div>
