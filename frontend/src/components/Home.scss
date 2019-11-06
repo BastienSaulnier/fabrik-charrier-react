@@ -1,9 +1,13 @@
 $black: black;
 $white: white;
+$darker-white: #f7f7f7;
+$border-color: #d9d9d9;
 $dark-gray: #242323;
+$medium-gray: #4d4d4d;
 $light-gray: #a0a6af;
 $pink: pink;
-$dark-gray: #242323;
+$pale-blue: #5454fd;
+$alpha-black: rgba(0, 0, 0, 0.5);
 
 div.Hero {
   position: relative;
@@ -12,56 +16,78 @@ div.Hero {
   background-repeat: no-repeat;
   background-position: center center;
   padding: 16% 0 20% 0;
-  border-bottom: solid 5px black;
-}
-div.Hero div.center {
-  text-align: center;
-}
-div.Hero div.center div.Title {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  padding-left: 1.7em;
-}
-div.Hero div.center div.Title p span {
-  font-family: "Rubik", sans-serif;
-  color: white;
-  font-size: 60px;
-  font-weight: 300;
-  letter-spacing: 0.5em;
-  opacity: 0;
-  animation-name: welcome;
-  animation-duration: 1s;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-div.Hero div.center div.Title p span:nth-child(1) {
-  animation-delay: 0.1s;
-}
-div.Hero div.center div.Title p span:nth-child(2) {
-  animation-delay: 0.2s;
-}
-div.Hero div.center div.Title p span:nth-child(3) {
-  animation-delay: 0.3s;
-}
-div.Hero div.center div.Title p span:nth-child(4) {
-  animation-delay: 0.4s;
-}
-div.Hero div.center div.Title p span:nth-child(5) {
-  animation-delay: 0.5s;
-}
-div.Hero div.center div.Title p span:nth-child(6) {
-  animation-delay: 0.6s;
-}
-div.Hero div.center div.Title p span:nth-child(7) {
-  animation-delay: 0.7s;
-}
-div.Hero div.center div.Title p span:nth-child(8) {
-  animation-delay: 0.8s;
-}
-div.Hero div.center div.Title p span:nth-child(9) {
-  animation-delay: 0.9s;
+  border-bottom: solid 5px $black;
+  div.center {
+    text-align: center;
+    div.Title {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      padding-left: 1.7em;
+      strong {
+        color: $light-gray;
+        display: block;
+        text-align: right;
+        font-weight: 300;
+        letter-spacing: 5px;
+        animation-name: welcome;
+        animation-duration: 2.5s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-delay: 1.5s;
+        opacity: 0;
+        margin-right: 1.7em;
+        a {
+          color: $white;
+          font-weight: 700;
+          letter-spacing: 5px;
+        }
+      }
+      p {
+        span {
+          font-family: "Rubik", sans-serif;
+          color: $white;
+          font-size: 60px;
+          font-weight: 300;
+          letter-spacing: 0.5em;
+          opacity: 0;
+          animation-name: welcome;
+          animation-duration: 1s;
+          animation-direction: normal;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+          &:nth-child(1) {
+            animation-delay: 0.1s;
+          }
+          &:nth-child(2) {
+            animation-delay: 0.2s;
+          }
+          &:nth-child(3) {
+            animation-delay: 0.3s;
+          }
+          &:nth-child(4) {
+            animation-delay: 0.4s;
+          }
+          &:nth-child(5) {
+            animation-delay: 0.5s;
+          }
+          &:nth-child(6) {
+            animation-delay: 0.6s;
+          }
+          &:nth-child(7) {
+            animation-delay: 0.7s;
+          }
+          &:nth-child(8) {
+            animation-delay: 0.8s;
+          }
+          &:nth-child(9) {
+            animation-delay: 0.9s;
+          }
+        }
+      }
+    }
+  }
 }
 @keyframes welcome {
   0% {
@@ -73,33 +99,109 @@ div.Hero div.center div.Title p span:nth-child(9) {
     transform: translateX(0px);
   }
 }
-div.Hero div.center div.Title strong {
-  color: #a0a6af;
-  display: block;
-  text-align: right;
-  font-weight: 300;
-  letter-spacing: 5px;
-  animation-name: welcome;
-  animation-duration: 2.5s;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-delay: 1.5s;
-  opacity: 0;
-  margin-right: 1.7em;
+
+section.Intro {
+  padding: 200px 8% 100px 8%;
+  h2 {
+    margin-bottom: 20px;
+    color: $light-gray;
+    strong {
+      color: $black;
+    }
+  }
+  ul {
+    font-size: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    li {
+      list-style-type: none;
+      font-size: 16px;
+      display: inline-block;
+      width: calc(50% - 60px);
+      padding-top: 60px;
+      img {
+        display: block;
+        margin: -10% auto 0 auto;
+        animation: heartbeat 2s infinite ease-in-out;
+      }
+    }
+  }
 }
-div.Hero div.center div.Title strong a {
-  color: white;
-  font-weight: 700;
-  letter-spacing: 5px;
-}
-@keyframes welcome {
+@keyframes heartbeat {
   0% {
-    opacity: 0;
-    transform: translateX(15px);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.02, 1.02, 1.02);
   }
   100% {
-    opacity: 1;
-    transform: translateX(0px);
+    transform: scale3d(1, 1, 1);
+  }
+}
+section.About {
+  padding: 20px 8% 150px 8%;
+  h4 {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: right;
+    text-transform: capitalize;
+  }
+  ul {
+    font-size: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    li {
+      list-style-type: none;
+      font-size: 16px;
+      display: inline-block;
+      width: calc(50% - 60px);
+      padding-top: 60px;
+    }
+  }
+}
+
+section.Work {
+  padding: 160px 8% 75px 8%;
+  h4 {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  ul {
+    font-size: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    li {
+      list-style-type: none;
+      font-size: 16px;
+      display: inline-block;
+      width: calc(50% - 60px);
+      padding-top: 60px;
+    }
+  }
+}
+section.More {
+  padding: 75px 8% 150px 8%;
+  h4 {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-align: right;
+  }
+  ul {
+    font-size: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    li {
+      list-style-type: none;
+      font-size: 16px;
+      display: inline-block;
+      width: calc(50% - 60px);
+      padding-top: 60px;
+    }
   }
 }

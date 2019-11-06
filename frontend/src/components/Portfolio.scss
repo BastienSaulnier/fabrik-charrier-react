@@ -1,3 +1,14 @@
+$black: black;
+$white: white;
+$darker-white: #f7f7f7;
+$border-color: #d9d9d9;
+$dark-gray: #242323;
+$medium-gray: #4d4d4d;
+$light-gray: #a0a6af;
+$pink: pink;
+$pale-blue: #5454fd;
+$alpha-black: rgba(0, 0, 0, 0.5);
+
 div.Hero-portfolio {
   position: relative;
   background-image: url("/img/hipster-bg-low.jpg");
@@ -5,56 +16,77 @@ div.Hero-portfolio {
   background-repeat: no-repeat;
   background-position: center center;
   padding: 16% 0 20% 0;
-  border-bottom: solid 5px black;
-}
-div.Hero-portfolio div.center {
-  text-align: center;
-}
-div.Hero-portfolio div.center div.Title {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  padding-left: 1.7em;
-}
-div.Hero-portfolio div.center div.Title p span {
-  font-family: "Rubik", sans-serif;
-  color: white;
-  font-size: 60px;
-  font-weight: 300;
-  letter-spacing: 0.5em;
-  opacity: 0;
-  animation-name: welcome;
-  animation-duration: 0.5s;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-div.Hero-portfolio div.center div.Title p span:nth-child(1) {
-  animation-delay: 0.1s;
-}
-div.Hero-portfolio div.center div.Title p span:nth-child(2) {
-  animation-delay: 0.15s;
-}
-div.Hero-portfolio div.center div.Title p span:nth-child(3) {
-  animation-delay: 0.2s;
-}
-div.Hero-portfolio div.center div.Title p span:nth-child(4) {
-  animation-delay: 0.25s;
-}
-div.Hero-portfolio div.center div.Title p span:nth-child(5) {
-  animation-delay: 0.3s;
-}
-div.Hero-portfolio div.center div.Title p span:nth-child(6) {
-  animation-delay: 0.35s;
-}
-div.Hero-portfolio div.center div.Title p span:nth-child(7) {
-  animation-delay: 0.4s;
-}
-div.Hero-portfolio div.center div.Title p span:nth-child(8) {
-  animation-delay: 0.45s;
-}
-div.Hero-portfolio div.center div.Title p span:nth-child(9) {
-  animation-delay: 0.5s;
+  border-bottom: solid 5px $black;
+  div.center {
+    text-align: center;
+    div.Title {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      padding-left: 1.7em;
+      strong {
+        color: $light-gray;
+        display: block;
+        text-align: right;
+        font-weight: 300;
+        letter-spacing: 5px;
+        animation-name: welcome;
+        animation-duration: 1.4s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        margin-right: 1.7em;
+        a {
+          color: $white;
+          font-weight: 700;
+          letter-spacing: 5px;
+        }
+      }
+      p {
+        span {
+          font-family: "Rubik", sans-serif;
+          color: $white;
+          font-size: 60px;
+          font-weight: 300;
+          letter-spacing: 0.5em;
+          opacity: 0;
+          animation-name: welcome;
+          animation-duration: 0.5s;
+          animation-direction: normal;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+          &:nth-child(1) {
+            animation-delay: 0.1s;
+          }
+          &:nth-child(2) {
+            animation-delay: 0.15s;
+          }
+          &:nth-child(3) {
+            animation-delay: 0.2s;
+          }
+          &:nth-child(4) {
+            animation-delay: 0.25s;
+          }
+          &:nth-child(5) {
+            animation-delay: 0.3s;
+          }
+          &:nth-child(6) {
+            animation-delay: 0.35s;
+          }
+          &:nth-child(7) {
+            animation-delay: 0.4s;
+          }
+          &:nth-child(8) {
+            animation-delay: 0.45s;
+          }
+          &:nth-child(9) {
+            animation-delay: 0.5s;
+          }
+        }
+      }
+    }
+  }
 }
 @keyframes welcome {
   0% {
@@ -66,22 +98,139 @@ div.Hero-portfolio div.center div.Title p span:nth-child(9) {
     transform: translateX(0px);
   }
 }
-div.Hero-portfolio div.center div.Title strong {
-  color: #a0a6af;
+
+div.Portfolio {
+  padding: 20px 8% 40px 8%;
+  div.Lightbox {
+    div.lightbox-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      align-content: stretch;
+      img.lightbox-img-thumbnail {
+        margin: 5px;
+        transition: all 0.5s;
+        overflow: hidden;
+        animation: slidein 0.8s ease-in forwards;
+        transition: all 0.5s;
+        opacity: 0;
+        filter: grayscale(80%) blur(1px);
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.006);
+          filter: grayscale(0%) blur(0px);
+        }
+        &:nth-child(1) {
+          animation-delay: 0.4s;
+        }
+        &:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        &:nth-child(3) {
+          animation-delay: 0.6s;
+        }
+        &:nth-child(4) {
+          animation-delay: 0.4s;
+        }
+        &:nth-child(5) {
+          animation-delay: 0.8s;
+        }
+        &:nth-child(6) {
+          animation-delay: 0.6s;
+        }
+        &:nth-child(7) {
+          animation-delay: 0.4s;
+        }
+        &:nth-child(8) {
+          animation-delay: 0.8s;
+        }
+        &:nth-child(9) {
+          animation-delay: 0.6s;
+        }
+        &:nth-child(10) {
+          animation-delay: 0.8s;
+        }
+        &:nth-child(11) {
+          animation-delay: 1s;
+        }
+        &:nth-child(12) {
+          animation-delay: 0.6s;
+        }
+        &:nth-child(13) {
+          animation-delay: 1s;
+        }
+        &:nth-child(14) {
+          animation-delay: 0.4s;
+        }
+        &:nth-child(15) {
+          animation-delay: 0.8s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*div.Portfolio img:nth-child(1) {
+  animation-delay: 0.4s;
+}
+div.Portfolio img:nth-child(2) {
+  animation-delay: 0.2s;
+}
+div.Portfolio img:nth-child(3) {
+  animation-delay: 0.6s;
+}
+div.Portfolio img:nth-child(4) {
+  animation-delay: 0.4s;
+}
+div.Portfolio img:nth-child(5) {
+  animation-delay: 0.8s;
+}
+div.Portfolio img:nth-child(6) {
+  animation-delay: 0.6s;
+}
+div.Portfolio img:nth-child(7) {
+  animation-delay: 0.4s;
+}
+div.Portfolio img:nth-child(8) {
+  animation-delay: 0.8s;
+}
+div.Portfolio img:nth-child(9) {
+  animation-delay: 0.6s;
+}
+div.Portfolio img:nth-child(10) {
+  animation-delay: 0.8s;
+}
+div.Portfolio img:nth-child(11) {
+  animation-delay: 1s;
+}
+div.Portfolio img:nth-child(12) {
+  animation-delay: 0.6s;
+}
+div.Portfolio img:nth-child(13) {
+  animation-delay: 1s;
+}
+div.Portfolio img:nth-child(14) {
+  animation-delay: 0.4s;
+}
+div.Portfolio img:nth-child(15) {
+  animation-delay: 0.8s;
+}
+div.Portfolio img:hover {
+  filter: grayscale(0%) blur(0px);
+}
+div.Portfolio img {
   display: block;
-  text-align: right;
-  font-weight: 300;
-  letter-spacing: 5px;
-  animation-name: welcome;
-  animation-duration: 1.4s;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  opacity: 0;
-  margin-right: 1.7em;
-}
-div.Hero-portfolio div.center div.Title strong a {
-  color: white;
-  font-weight: 700;
-  letter-spacing: 5px;
-}
+  margin: 0 auto;
+  filter: grayscale(80%) blur(1px);
+  transition: all 0.5s;
+}*/

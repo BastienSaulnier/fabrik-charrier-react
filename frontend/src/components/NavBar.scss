@@ -1,9 +1,12 @@
 $black: black;
 $white: white;
+$darker-white: #f7f7f7;
+$border-color: #d9d9d9;
 $dark-gray: #242323;
+$medium-gray: #4d4d4d;
 $light-gray: #a0a6af;
 $pink: pink;
-$dark-gray: #242323;
+$pale-blue: #5454fd;
 $alpha-black: rgba(0, 0, 0, 0.5);
 
 header {
@@ -65,7 +68,6 @@ header {
       a {
         color: $light-gray;
         position: relative;
-        line-height: 36px;
         transition: all 0.7s;
         outline: 0;
         &.active {
@@ -78,6 +80,13 @@ header {
             height: 1px;
             background-color: $light-gray;
             transition: all 0.7s;
+            position: absolute;
+          }
+          &:before {
+            top: -6px;
+          }
+          &:after {
+            bottom: -8px;
           }
         }
         &:hover {
@@ -91,13 +100,15 @@ header {
           height: 1px;
           background-color: $light-gray;
           transition: all 0.7s;
+          position: absolute;
         }
         &:before {
-          position: absolute;
+          top: -6px;
           right: 0;
           margin-right: -35%;
         }
         &:after {
+          bottom: -8px;
           margin-left: -35%;
         }
 
