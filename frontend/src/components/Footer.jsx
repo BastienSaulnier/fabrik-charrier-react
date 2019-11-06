@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.scss";
 
 class Footer extends React.Component {
@@ -62,7 +63,12 @@ class Footer extends React.Component {
                   </a>
                 </li>
                 <li>
-                  <a href="#" target="_blank" id="gmail">
+                  <a
+                    href="mailto:lafabrik.ebeniste@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    id="gmail"
+                  >
                     <i className="fas fa-envelope-square"></i>
                   </a>
                 </li>
@@ -73,10 +79,20 @@ class Footer extends React.Component {
         <div className="Foot">
           <p>
             <strong>
-              <a href="https://lafabrikcharrier.com">lafabrikcharrier.com </a>
+              <Link to="/">lafabrikcharrier.com</Link>
             </strong>{" "}
             made with <i className="fas fa-heart"></i> by{" "}
-            <strong>Bastien Saulnier</strong>, Copyright 2019.
+            <strong>Bastien Saulnier</strong> from{" "}
+            <strong>
+              <a
+                href="https://www.wildcodeschool.com/fr-FR"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Wild Code School
+              </a>
+            </strong>
+            , Copyright 2019.
           </p>
         </div>
       </footer>

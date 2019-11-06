@@ -33,7 +33,11 @@ class NavBar extends React.Component {
                 </a>
               </li>
               <li>
-                <a href="" target="_blank">
+                <a
+                  href="mailto:lafabrik.ebeniste@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fas fa-envelope-square"></i>
                 </a>
               </li>

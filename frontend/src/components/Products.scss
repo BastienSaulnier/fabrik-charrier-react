@@ -1,9 +1,13 @@
 $black: black;
 $white: white;
+$darker-white: #f7f7f7;
+$border-color: #d9d9d9;
 $dark-gray: #242323;
+$medium-gray: #4d4d4d;
 $light-gray: #a0a6af;
 $pink: pink;
-$dark-gray: #242323;
+$pale-blue: #5454fd;
+$alpha-black: rgba(0, 0, 0, 0.5);
 
 div.Hero-produits {
   position: relative;
@@ -89,5 +93,19 @@ div.Hero-produits {
   100% {
     opacity: 1;
     transform: translateX(0px);
+  }
+}
+
+div.Title-produits {
+  padding: 60px 8% 40px 8%;
+  margin-bottom: 40px;
+  h4 {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: left;
+    text-transform: capitalize;
+  }
+  p {
+    line-height: 25px;
   }
 }
