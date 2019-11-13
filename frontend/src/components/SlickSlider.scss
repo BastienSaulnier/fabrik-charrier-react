@@ -150,7 +150,9 @@ button.slick-prev:before {
   left: 3px;
 }
 ul.slick-dots {
-  margin: 30px auto;
+  margin: 0 auto;
   display: block;
-  position: relative;
+  position: absolute;
+  top: -40px;
+  height: 20px;
 }

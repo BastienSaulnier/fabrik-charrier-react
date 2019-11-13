@@ -1,6 +1,6 @@
 import React from "react";
 import Lightbox from "react-lightbox-component";
-import PortfolioPhotosList from "./PortfolioPhotosList";
+import PortfolioPhotosList from "./PortfolioPhotosList.js";
 import "../../node_modules/react-lightbox-component/build/css/index.css";
 
 class ReactLightbox extends React.Component {

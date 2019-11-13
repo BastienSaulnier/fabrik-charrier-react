@@ -69,7 +69,6 @@ header {
         color: $light-gray;
         position: relative;
         transition: all 0.7s;
-        outline: 0;
         &.active {
           color: $dark-gray;
           &:before,

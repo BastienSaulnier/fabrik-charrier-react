@@ -1,5 +1,5 @@
 import React from "react";
-import SlickSlider from "./SlickSlider";
+import SlickSlider from "../SlickSlider";
 import { Link } from "react-router-dom";
 import "./Products.scss";
 

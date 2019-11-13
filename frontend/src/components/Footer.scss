@@ -85,15 +85,17 @@ $alpha-black: rgba(0, 0, 0, 0.5);
               color: transparent;
               font-size: 16px;
               font-family: "Lato", sans-serif;
-              transition: all 0.3s;
+              transition: all 0.1s;
             }
             &#fb::after {
               content: "Facebook";
+              margin-left: -3px;
               transform: rotate(-20deg);
               text-align: center;
             }
             &#inst::after {
               content: "Instagram";
+              margin-left: -3px;
               transform: rotate(-20deg);
               text-align: center;
             }

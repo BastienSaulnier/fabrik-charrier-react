@@ -1,5 +1,5 @@
 import React from "react";
-import ReactLightbox from "./ReactLightbox";
+import ReactLightbox from "../ReactLightbox";
 import { Link } from "react-router-dom";
 import "./Portfolio.scss";
 

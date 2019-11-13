@@ -1,5 +1,5 @@
 import React from "react";
-import Selector from "./Selector";
+import Selector from "../Selector";
 import { Link } from "react-router-dom";
 import "./Home.scss";
 
