@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.scss";
 
 function NavBar() {
+  const [menuIsOpen, setOpen] = useState(false);
+  const [burgerIsCrossed, setCrossed] = useState(false);
   return (
     <header>
       <div className="TopBar">
@@ -68,13 +70,19 @@ function NavBar() {
               </NavLink>
             </li>
           </ul>
-          <div className="BurgerMenu">
-            <span></span>
+          <div
+            className="BurgerMenu"
+            onClick={() => {
+              setOpen(!menuIsOpen);
+              setCrossed(!burgerIsCrossed);
+            }}
+          >
+            <span className={burgerIsCrossed ? "isCrossed" : ""}></span>
           </div>
         </nav>
       </div>
 
-      <div className="BurgerPanel">
+      <div className={menuIsOpen ? "BurgerPanel isOpen" : "BurgerPanel"}>
         <p>
           <img src="/img/logo.png" alt="" /> MENU
           <img src="/img/logo.png" alt="" />
@@ -82,22 +90,51 @@ function NavBar() {
 
         <ul className="MobileMenu">
           <li>
-            <NavLink activeClassName="active" exact to="/">
+            <NavLink
+              activeClassName="active"
+              exact
+              to="/"
+              onClick={() => {
+                setOpen(!menuIsOpen);
+                setCrossed(!burgerIsCrossed);
+              }}
+            >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName="active" to="/Products">
+            <NavLink
+              activeClassName="active"
+              to="/Products"
+              onClick={() => {
+                setOpen(!menuIsOpen);
+                setCrossed(!burgerIsCrossed);
+              }}
+            >
               Produits
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName="active" to="/Portfolio">
+            <NavLink
+              activeClassName="active"
+              to="/Portfolio"
+              onClick={() => {
+                setOpen(!menuIsOpen);
+                setCrossed(!burgerIsCrossed);
+              }}
+            >
               Portfolio
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName="active" to="/Contact">
+            <NavLink
+              activeClassName="active"
+              to="/Contact"
+              onClick={() => {
+                setOpen(!menuIsOpen);
+                setCrossed(!burgerIsCrossed);
+              }}
+            >
               Contact
             </NavLink>
           </li>

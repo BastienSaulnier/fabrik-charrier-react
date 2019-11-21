@@ -134,6 +134,8 @@ $alpha-black: rgba(0, 0, 0, 0.5);
         background-color: $white;
         width: 26px;
         height: 4px;
+        transition: all 0.3s;
+        transition-delay: 0.2s;
         &:before,
         &:after {
           content: "";
@@ -142,6 +144,7 @@ $alpha-black: rgba(0, 0, 0, 0.5);
           height: 4px;
           border-radius: 2px;
           background-color: $white;
+          transition: all 0.3s;
         }
         &:before {
           position: absolute;
@@ -151,10 +154,29 @@ $alpha-black: rgba(0, 0, 0, 0.5);
           position: absolute;
           bottom: 5px;
         }
+
+        &.isCrossed {
+          background-color: transparent;
+          &:before {
+            transform-origin: top left;
+            transform: rotate(45deg);
+            top: 6px;
+            margin-left: 5px;
+            /*left: 9px;*/
+          }
+          &:after {
+            transform-origin: bottom left;
+            transform: rotate(-45deg);
+            bottom: 5px;
+            margin-left: 5px;
+            /*left: 9px;*/
+          }
+        }
       }
     }
   }
 }
+
 .BurgerPanel {
   display: none;
   position: fixed;
@@ -164,6 +186,8 @@ $alpha-black: rgba(0, 0, 0, 0.5);
   height: 100vh;
   background-color: $white;
   border-right: solid 4px $light-gray;
+  transform: translateX(-200px);
+  transition: all 0.5s;
   p {
     margin-top: 61px;
     font-weight: 700;
@@ -181,6 +205,7 @@ $alpha-black: rgba(0, 0, 0, 0.5);
       }
     }
   }
+
   .MobileMenu {
     list-style-type: none;
     font-size: 16px;
@@ -227,6 +252,9 @@ $alpha-black: rgba(0, 0, 0, 0.5);
       }
     }
   }
+}
+.isOpen {
+  transform: translateX(0);
 }
 
 @media screen and (max-width: 961px) {
