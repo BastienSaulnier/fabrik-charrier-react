@@ -116,9 +116,12 @@ $alpha-black: rgba(0, 0, 0, 0.5);
     }
   }
   .Foot {
+    position: absolute;
+    z-index: 3;
     text-align: center;
     border-top: solid 4px $light-gray;
     padding: 5px 10px;
+    background-color: $white;
     p {
       font-weight: 400;
       font-size: 16px;
