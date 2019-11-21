@@ -9,7 +9,7 @@ $pink: pink;
 $pale-blue: #5454fd;
 $alpha-black: rgba(0, 0, 0, 0.5);
 
-div.Hero-produits {
+div.Hero-page {
   position: relative;
   background-image: url("/img/hipster-bg-low.jpg");
   background-size: cover;
@@ -80,6 +80,9 @@ div.Hero-produits {
           &:nth-child(8) {
             animation-delay: 0.45s;
           }
+          &:nth-child(9) {
+            animation-delay: 0.5s;
+          }
         }
       }
     }
@@ -93,19 +96,5 @@ div.Hero-produits {
   100% {
     opacity: 1;
     transform: translateX(0px);
-  }
-}
-
-div.Title-produits {
-  padding: 60px 8% 40px 8%;
-  margin-bottom: 40px;
-  h4 {
-    font-size: 24px;
-    font-weight: 700;
-    text-align: left;
-    text-transform: capitalize;
-  }
-  p {
-    line-height: 25px;
   }
 }

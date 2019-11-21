@@ -1,6 +1,6 @@
 import React from "react";
-import "./Selector.scss";
 import { Link } from "react-router-dom";
+import "./Selector.scss";
 
 class Selector extends React.Component {
   constructor(props) {

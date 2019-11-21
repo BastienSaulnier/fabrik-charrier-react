@@ -2,10 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.scss";
 
-class NavBar extends React.Component {
-  render() {
-    return (
-      <header>
+function NavBar() {
+  return (
+    <header>
+      <div className="TopBar">
         <div className="LeftNav">
           <div className="Logo">
             <strong>FABRIK-CHARRIER</strong>
@@ -52,9 +52,6 @@ class NavBar extends React.Component {
                 Home
               </NavLink>
             </li>
-            {/*<li>
-              <NavLink>News</NavLink>
-            </li>*/}
             <li>
               <NavLink activeClassName="active" to="/Products">
                 Produits
@@ -75,9 +72,71 @@ class NavBar extends React.Component {
             <span></span>
           </div>
         </nav>
-      </header>
-    );
-  }
+      </div>
+
+      <div className="BurgerPanel">
+        <p>
+          <img src="/img/logo.png" alt="" /> MENU
+          <img src="/img/logo.png" alt="" />
+        </p>
+
+        <ul className="MobileMenu">
+          <li>
+            <NavLink activeClassName="active" exact to="/">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeClassName="active" to="/Products">
+              Produits
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeClassName="active" to="/Portfolio">
+              Portfolio
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeClassName="active" to="/Contact">
+              Contact
+            </NavLink>
+          </li>
+        </ul>
+
+        <nav className="MobileSocialsNav">
+          <ul>
+            <li>
+              <a
+                href="https://www.facebook.com/la.fabrik.charrier"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-facebook-square"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/fabrikcharrier/?hl=fr"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:lafabrik.ebeniste@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fas fa-envelope-square"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
 }
 
 export default NavBar;
