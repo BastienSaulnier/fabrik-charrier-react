@@ -4,6 +4,7 @@ import "./NavBar.scss";
 
 function NavBar() {
   const [menuIsOpen, setOpen] = useState(false);
+  const [burgerIsCrossed, setCrossed] = useState(false);
   return (
     <header>
       <div className="TopBar">
@@ -69,8 +70,14 @@ function NavBar() {
               </NavLink>
             </li>
           </ul>
-          <div className="BurgerMenu" onClick={() => setOpen(!menuIsOpen)}>
-            <span></span>
+          <div
+            className="BurgerMenu"
+            onClick={() => {
+              setOpen(!menuIsOpen);
+              setCrossed(!burgerIsCrossed);
+            }}
+          >
+            <span className={burgerIsCrossed ? "isCrossed" : ""}></span>
           </div>
         </nav>
       </div>
@@ -87,7 +94,10 @@ function NavBar() {
               activeClassName="active"
               exact
               to="/"
-              onClick={() => setOpen(!menuIsOpen)}
+              onClick={() => {
+                setOpen(!menuIsOpen);
+                setCrossed(!burgerIsCrossed);
+              }}
             >
               Home
             </NavLink>
@@ -96,7 +106,10 @@ function NavBar() {
             <NavLink
               activeClassName="active"
               to="/Products"
-              onClick={() => setOpen(!menuIsOpen)}
+              onClick={() => {
+                setOpen(!menuIsOpen);
+                setCrossed(!burgerIsCrossed);
+              }}
             >
               Produits
             </NavLink>
@@ -105,7 +118,10 @@ function NavBar() {
             <NavLink
               activeClassName="active"
               to="/Portfolio"
-              onClick={() => setOpen(!menuIsOpen)}
+              onClick={() => {
+                setOpen(!menuIsOpen);
+                setCrossed(!burgerIsCrossed);
+              }}
             >
               Portfolio
             </NavLink>
@@ -114,7 +130,10 @@ function NavBar() {
             <NavLink
               activeClassName="active"
               to="/Contact"
-              onClick={() => setOpen(!menuIsOpen)}
+              onClick={() => {
+                setOpen(!menuIsOpen);
+                setCrossed(!burgerIsCrossed);
+              }}
             >
               Contact
             </NavLink>
