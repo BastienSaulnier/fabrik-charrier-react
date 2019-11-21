@@ -4,7 +4,6 @@ import ProductsList from "./ProductsList.js";
 import "./SlickSlider.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-/*import Gallery from "react-grid-gallery";*/
 import Lightbox from "react-lightbox-component";
 
 function SlickSlider() {
@@ -23,7 +22,10 @@ function SlickSlider() {
       <Slider {...settings}>
         {ProductsList.map(product => {
           return (
-            <div className="Slider-product">
+            <div
+              id={"productNumber" + product.productId}
+              className="Slider-product"
+            >
               <div className="Item">
                 <div className="ProductsCount">
                   Produit : {product.productId} / {ProductsList.length}
@@ -73,21 +75,6 @@ function SlickSlider() {
       <aside className="Cat-products">
         <h4>CATÉGORIES :</h4>
         <ul>
-          {/*<li>
-              <a href="">Category 1</a>
-            </li>
-            <li>
-              <a href="">Category 2</a>
-            </li>
-            <li>
-              <a href="">Category 3</a>
-            </li>
-            <li>
-              <a href="">Category 4</a>
-            </li>
-            <li>
-              <a href="">Category 5</a>
-            </li>*/}
           {ProductsList.map(product => {
             return (
               <li>
