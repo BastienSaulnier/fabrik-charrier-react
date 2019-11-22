@@ -83,10 +83,7 @@ function NavBar() {
       </div>
 
       <div className={menuIsOpen ? "BurgerPanel isOpen" : "BurgerPanel"}>
-        <p>
-          <img src="/img/logo.png" alt="" /> MENU
-          <img src="/img/logo.png" alt="" />
-        </p>
+        <img src="/img/logo.png" alt="" />
 
         <ul className="MobileMenu">
           <li>

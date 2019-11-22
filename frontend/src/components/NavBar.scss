@@ -182,28 +182,16 @@ $alpha-black: rgba(0, 0, 0, 0.5);
   position: fixed;
   z-index: 2;
   top: 0px;
-  width: 200px;
+  width: 40%;
   height: 100vh;
   background-color: $white;
   border-right: solid 4px $light-gray;
-  transform: translateX(-200px);
+  transform: translateX(-100%);
   transition: all 0.5s;
-  p {
-    margin-top: 61px;
-    font-weight: 700;
-    text-align: center;
-    line-height: 61px;
-    img {
-      width: 40px;
-      display: inline-block;
-      vertical-align: middle;
-      &:nth-child(1) {
-        margin-right: 10px;
-      }
-      &:nth-child(2) {
-        margin-left: 10px;
-      }
-    }
+  img {
+    width: 100px;
+    display: block;
+    margin: 80px auto 20px auto;
   }
 
   .MobileMenu {
@@ -281,6 +269,9 @@ $alpha-black: rgba(0, 0, 0, 0.5);
 @media screen and (max-width: 500px) {
   header .TopBar .LeftNav .SocialsNav {
     display: none;
+  }
+  header .BurgerPanel {
+    width: 200px;
   }
   header .BurgerPanel .MobileSocialsNav {
     display: block;
