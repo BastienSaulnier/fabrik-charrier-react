@@ -1,13 +1,4 @@
-$black: black;
-$white: white;
-$darker-white: #f7f7f7;
-$border-color: #d9d9d9;
-$dark-gray: #242323;
-$medium-gray: #4d4d4d;
-$light-gray: #a0a6af;
-$pink: pink;
-$pale-blue: #5454fd;
-$alpha-black: rgba(0, 0, 0, 0.5);
+@import "../../index.scss";
 
 div.Portfolio {
   padding: 20px 8% 40px 8%;
