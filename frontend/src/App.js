@@ -1,9 +1,9 @@
 import React from "react";
 import NavBar from "./components/NavBar";
-import Home from "./components/pages/Home";
-import Products from "./components/pages/Products";
-import Portfolio from "./components/pages/Portfolio";
-import Contact from "./components/pages/Contact";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Portfolio from "./pages/Portfolio";
+import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import { Switch, Route } from "react-router-dom";
 import "./App.scss";

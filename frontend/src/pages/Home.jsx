@@ -1,11 +1,11 @@
 import React from "react";
-import Hero from "../Hero";
-import Intro from "../Intro";
-import About from "../About";
-import Selector from "../Selector";
-import Work from "../Work";
-import More from "../More";
-import "./Home.scss";
+import Hero from "../components/Hero";
+import Intro from "../components/Intro";
+import About from "../components/About";
+import Selector from "../components/Selector";
+import Work from "../components/Work";
+import More from "../components/More";
+import "./styles/Home.scss";
 
 function Home() {
   return (

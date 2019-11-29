@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./HeroPages.scss";
+import "./styles/HeroPages.scss";
 
 function HeroPages(props) {
   return (

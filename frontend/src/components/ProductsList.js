@@ -114,6 +114,37 @@ let ProductsList = [
         description: "Secretaire-1 description"
       }
     ]
+  },
+  {
+    productId: 4,
+    photo: "/img/slider-produits/Secretaire.jpg",
+    product: "Secretaire Design",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    price: 600,
+    category: "Secretaires",
+    note: "Bliblibli",
+    lightboxGallery: [
+      {
+        src: "/img/slider-produits/Secretaire.jpg",
+        title: "Secretaire-1",
+        description: "Secretaire-1 description"
+      },
+      {
+        src: "/img/slider-produits/Secretaire.jpg",
+        title: "Secretaire-1",
+        description: "Secretaire-1 description"
+      },
+      {
+        src: "/img/slider-produits/Secretaire.jpg",
+        title: "Secretaire-1",
+        description: "Secretaire-1 description"
+      },
+      {
+        src: "/img/slider-produits/Secretaire.jpg",
+        title: "Secretaire-1",
+        description: "Secretaire-1 description"
+      }
+    ]
   }
 ];
 

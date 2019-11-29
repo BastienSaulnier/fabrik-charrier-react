@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./NavBar.scss";
+import "./styles/NavBar.scss";
 
 function NavBar() {
   const [menuIsOpen, setOpen] = useState(false);
-  const [burgerIsCrossed, setCrossed] = useState(false);
   return (
     <header>
       <div className="TopBar">
@@ -74,10 +73,9 @@ function NavBar() {
             className="BurgerMenu"
             onClick={() => {
               setOpen(!menuIsOpen);
-              setCrossed(!burgerIsCrossed);
             }}
           >
-            <span className={burgerIsCrossed ? "isCrossed" : ""}></span>
+            <span className={menuIsOpen ? "isCrossed" : ""}></span>
           </div>
         </nav>
       </div>
@@ -93,7 +91,6 @@ function NavBar() {
               to="/"
               onClick={() => {
                 setOpen(!menuIsOpen);
-                setCrossed(!burgerIsCrossed);
               }}
             >
               Home
@@ -105,7 +102,6 @@ function NavBar() {
               to="/Products"
               onClick={() => {
                 setOpen(!menuIsOpen);
-                setCrossed(!burgerIsCrossed);
               }}
             >
               Produits
@@ -117,7 +113,6 @@ function NavBar() {
               to="/Portfolio"
               onClick={() => {
                 setOpen(!menuIsOpen);
-                setCrossed(!burgerIsCrossed);
               }}
             >
               Portfolio
@@ -129,7 +124,6 @@ function NavBar() {
               to="/Contact"
               onClick={() => {
                 setOpen(!menuIsOpen);
-                setCrossed(!burgerIsCrossed);
               }}
             >
               Contact

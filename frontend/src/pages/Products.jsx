@@ -1,8 +1,8 @@
 import React from "react";
-import HeroPages from "../HeroPages";
-import TitleProducts from "../TitleProducts";
-import SlickSlider from "../SlickSlider";
-import "./Products.scss";
+import HeroPages from "../components/HeroPages";
+import TitleProducts from "../components/TitleProducts";
+import SlickSlider from "../components/SlickSlider";
+import "./styles/Products.scss";
 
 function Products() {
   return (

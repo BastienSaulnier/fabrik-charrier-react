@@ -1,7 +1,7 @@
 import React from "react";
-import HeroPages from "../HeroPages";
-import ReactLightbox from "../ReactLightbox";
-import "./Portfolio.scss";
+import HeroPages from "../components/HeroPages";
+import ReactLightbox from "../components/ReactLightbox";
+import "./styles/Portfolio.scss";
 
 function Portfolio() {
   return (

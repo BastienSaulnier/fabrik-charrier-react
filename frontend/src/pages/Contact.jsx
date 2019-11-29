@@ -1,9 +1,9 @@
 import React from "react";
-import HeroPages from "../HeroPages";
-import ContactForm from "../ContactForm";
-import TraditionalAdress from "../TraditionalAdress";
-import MapIFrame from "../MapIFrame";
-import "./Contact.scss";
+import HeroPages from "../components/HeroPages";
+import ContactForm from "../components/ContactForm";
+import TraditionalAdress from "../components/TraditionalAdress";
+import MapIFrame from "../components/MapIFrame";
+import "./styles/Contact.scss";
 
 function Contact() {
   return (
