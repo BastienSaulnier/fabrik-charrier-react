@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Lightbox from "react-lightbox-component";
+import Spinner from "react-spinkit";
 import axios from "axios";
 import "./styles/ReactLightbox.scss";
 import "../../node_modules/react-lightbox-component/build/css/index.css";
@@ -23,7 +24,11 @@ function ReactLightbox() {
 
   return (
     <div className="Lightbox">
-      {loading && <p className="loader">... Loading ...</p>}
+      {loading && (
+        <span className="loader">
+          <Spinner name="ball-spin-fade-loader" />
+        </span>
+      )}
       {!loading && (
         <Lightbox
           images={photos}

@@ -1,6 +1,8 @@
 @import "../../index.scss";
 
 .loader {
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40px;
   min-height: 100vh;
 }
