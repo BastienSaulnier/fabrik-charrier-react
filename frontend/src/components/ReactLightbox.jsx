@@ -26,7 +26,8 @@ function ReactLightbox() {
     <div className="Lightbox">
       {loading && (
         <span className="loader">
-          <Spinner name="ball-spin-fade-loader" />
+          <Spinner name="cube-grid" />
+          <p>... Loading ...</p>
         </span>
       )}
       {!loading && (
