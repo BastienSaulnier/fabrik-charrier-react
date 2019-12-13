@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Lightbox from "react-lightbox-component";
 import axios from "axios";
+import "./styles/ReactLightbox.scss";
 import "../../node_modules/react-lightbox-component/build/css/index.css";
 
 function ReactLightbox() {
