@@ -24,7 +24,7 @@ function SlickSlider() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5050/products/all`)
+      .get(`http://localhost:5050/products`)
       .then(res => {
         setProducts(res.data);
         setLoading(false);

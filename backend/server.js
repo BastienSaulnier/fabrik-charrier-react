@@ -24,7 +24,7 @@ app.get("/portfolio", (req, res) => {
   });
 });
 
-app.get("/products/all", (req, res) => {
+app.get("/products", (req, res) => {
   db.query(`SELECT * FROM products`, (err, results) => {
     if (err) {
       console.log("Error on GET /products !");
@@ -33,20 +33,6 @@ app.get("/products/all", (req, res) => {
     }
     return res.status(200).json(results);
   });
-});
-
-app.get("/products/buffets", (req, res) => {
-  db.query(
-    `SELECT * FROM products WHERE category = "buffets"`,
-    (err, results) => {
-      if (err) {
-        console.log("Error on GET /products !");
-        console.error(err);
-        return res.status(500).send("Sorry, we encountered an internal error.");
-      }
-      return res.status(200).json(results);
-    }
-  );
 });
 
 app.listen(serverPort, err => {

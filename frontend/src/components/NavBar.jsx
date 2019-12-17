@@ -54,7 +54,7 @@ function NavBar() {
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName="active" to="/products/all">
+              <NavLink activeClassName="active" to="/products">
                 Produits
               </NavLink>
             </li>
@@ -99,7 +99,7 @@ function NavBar() {
           <li>
             <NavLink
               activeClassName="active"
-              to="/products/all"
+              to="/products"
               onClick={() => {
                 setOpen(!menuIsOpen);
               }}
