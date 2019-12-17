@@ -1,55 +1,73 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import ProductsList from "./ProductsList.js";
+//import Lightbox from "react-lightbox-component";
+import Spinner from "react-spinkit";
+import axios from "axios";
 import "./styles/SlickSlider.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Lightbox from "react-lightbox-component";
+import { Link } from "react-router-dom";
 
-class SlickSlider extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      settings: {
-        dots: true,
-        infinite: true,
-        speed: 200,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        adaptiveHeight: true,
-        swipeToSlide: true
-      },
-      ProductsList: ProductsList
-    };
-  }
+function SlickSlider() {
+  let settings = {
+    dots: true,
+    infinite: true,
+    speed: 200,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    swipeToSlide: true
+  };
 
-  render() {
-    return (
-      <div className="Products-wrapper">
-        <Slider {...this.state.settings}>
-          {ProductsList.map(product => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5050/products/all`)
+      .then(res => {
+        setProducts(res.data);
+        setLoading(false);
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, [setProducts]);
+
+  console.log(setProducts);
+
+  return (
+    <div className="Products-wrapper">
+      {loading && (
+        <span className="loader">
+          <Spinner name="cube-grid" />
+          <p>... Loading ...</p>
+        </span>
+      )}
+
+      {!loading && (
+        <Slider {...settings}>
+          {products.map(product => {
             return (
-              <div
-                id={"productNumber" + product.productId}
-                className="Slider-product"
-              >
+              <div id={"productNumber" + product.id} className="Slider-product">
                 <div className="Item">
                   <div className="ProductsCount">
-                    Produit : {product.productId} / {ProductsList.length}
+                    Nb produits : {products.length}
                   </div>
                   <div className="Item-image">
                     <img src={product.photo} alt="" />
                   </div>
 
-                  <Lightbox
+                  {/*<Lightbox
                     images={product.lightboxGallery}
                     thumbnailWidth="40px"
                     thumbnailHeight="40px"
-                  />
+                  />*/}
 
                   <div className="Item-body">
                     <div className="Item-title">
-                      <h3>{product.product}</h3>
+                      <h3>{product.name}</h3>
                     </div>
 
                     <div className="Item-desc">
@@ -72,28 +90,32 @@ class SlickSlider extends React.Component {
                 <div className="More">
                   <hr />
                   <strong>Note de l'atelier :</strong>
-                  <p>{product.note}</p>
+                  <p>{product.workshop_advice}</p>
                 </div>
               </div>
             );
           })}
         </Slider>
-        <aside className="Cat-products">
-          <h4>CATÉGORIES :</h4>
-          <ul>
-            {/*{ProductsList.map(product => {
-              return (
-                <li>
-                  <a href="">{product.category}</a>
-                </li>
-              );
-            })}*/}
-            <button onClick={this.buffetList}>Buffets</button>
-          </ul>
-        </aside>
-      </div>
-    );
-  }
+      )}
+      <aside className="Cat-products">
+        <h4>CATÉGORIES :</h4>
+        <ul>
+          <li>
+            <Link to="all">Tout les produits</Link>
+          </li>
+          {products.map(product => {
+            return (
+              <li>
+                <Link to={`${product.category.toLowerCase()}`}>
+                  {product.category}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </aside>
+    </div>
+  );
 }
 
 export default SlickSlider;

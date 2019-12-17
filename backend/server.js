@@ -16,12 +16,37 @@ app.use(
 app.get("/portfolio", (req, res) => {
   db.query(`SELECT * FROM portfolio`, (err, results) => {
     if (err) {
-      console.log("Error on GET /portfolio!");
+      console.log("Error on GET /portfolio !");
       console.error(err);
       return res.status(500).send("Sorry, we encountered an internal error.");
     }
     return res.status(200).json(results);
   });
+});
+
+app.get("/products/all", (req, res) => {
+  db.query(`SELECT * FROM products`, (err, results) => {
+    if (err) {
+      console.log("Error on GET /products !");
+      console.error(err);
+      return res.status(500).send("Sorry, we encountered an internal error.");
+    }
+    return res.status(200).json(results);
+  });
+});
+
+app.get("/products/buffets", (req, res) => {
+  db.query(
+    `SELECT * FROM products WHERE category = "buffets"`,
+    (err, results) => {
+      if (err) {
+        console.log("Error on GET /products !");
+        console.error(err);
+        return res.status(500).send("Sorry, we encountered an internal error.");
+      }
+      return res.status(200).json(results);
+    }
+  );
 });
 
 app.listen(serverPort, err => {

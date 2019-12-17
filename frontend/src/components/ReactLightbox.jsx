@@ -30,6 +30,7 @@ function ReactLightbox() {
           <p>... Loading ...</p>
         </span>
       )}
+
       {!loading && (
         <Lightbox
           images={photos}
