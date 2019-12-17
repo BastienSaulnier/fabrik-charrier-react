@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./styles/NavBar.scss";
 
 function NavBar() {
-  const [menuIsOpen, setOpen] = useState(false);
+  const isMenuOpen = useSelector(state => state.isMenuOpen);
+  const dispatch = useDispatch();
+
   return (
     <header>
       <div className="TopBar">
@@ -71,16 +74,14 @@ function NavBar() {
           </ul>
           <div
             className="BurgerMenu"
-            onClick={() => {
-              setOpen(!menuIsOpen);
-            }}
+            onClick={() => dispatch({ type: "TOGGLE-MENU" })}
           >
-            <span className={menuIsOpen ? "isCrossed" : ""}></span>
+            <span className={isMenuOpen ? "isCrossed" : ""}></span>
           </div>
         </nav>
       </div>
 
-      <div className={menuIsOpen ? "BurgerPanel isOpen" : "BurgerPanel"}>
+      <div className={isMenuOpen ? "BurgerPanel isOpen" : "BurgerPanel"}>
         <img src="/img/logo.png" alt="" />
 
         <ul className="MobileMenu">
@@ -89,9 +90,7 @@ function NavBar() {
               activeClassName="active"
               exact
               to="/"
-              onClick={() => {
-                setOpen(!menuIsOpen);
-              }}
+              onClick={() => dispatch({ type: "TOGGLE-MENU" })}
             >
               Home
             </NavLink>
@@ -100,9 +99,7 @@ function NavBar() {
             <NavLink
               activeClassName="active"
               to="/products"
-              onClick={() => {
-                setOpen(!menuIsOpen);
-              }}
+              onClick={() => dispatch({ type: "TOGGLE-MENU" })}
             >
               Produits
             </NavLink>
@@ -111,9 +108,7 @@ function NavBar() {
             <NavLink
               activeClassName="active"
               to="/portfolio"
-              onClick={() => {
-                setOpen(!menuIsOpen);
-              }}
+              onClick={() => dispatch({ type: "TOGGLE-MENU" })}
             >
               Portfolio
             </NavLink>
@@ -122,9 +117,7 @@ function NavBar() {
             <NavLink
               activeClassName="active"
               to="/contact"
-              onClick={() => {
-                setOpen(!menuIsOpen);
-              }}
+              onClick={() => dispatch({ type: "TOGGLE-MENU" })}
             >
               Contact
             </NavLink>
