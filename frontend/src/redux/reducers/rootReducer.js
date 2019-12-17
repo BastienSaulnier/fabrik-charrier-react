@@ -3,11 +3,12 @@ const initialState = {
 };
 
 function rootReducer(state = initialState, action) {
+  const newState = { ...state };
   switch (action.type) {
     case "TOGGLE-MENU":
-      return { isMenuOpen: !state.isMenuOpen };
+      return { isMenuOpen: !newState.isMenuOpen };
     default:
-      return state;
+      return newState;
   }
 }
 
