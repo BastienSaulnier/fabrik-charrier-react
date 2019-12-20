@@ -8,6 +8,8 @@ function rootReducer(state = initialState, action) {
   switch (action.type) {
     case "TOGGLE-MENU":
       return { isMenuOpen: !newState.isMenuOpen };
+    case "ALL_PRODUCTS":
+      return { filter: "" };
     case "BUFFETS":
       return { filter: "Buffets" };
     case "TABLES":

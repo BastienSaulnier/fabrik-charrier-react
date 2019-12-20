@@ -113,7 +113,9 @@ function SlickSlider() {
         <h4>CATÉGORIES :</h4>
         <ul>
           <li>
-            <p>Touts les produits</p>
+            <p onClick={() => dispatch({ type: "ALL_PRODUCTS" })}>
+              Tout les produits
+            </p>
           </li>
           <li>
             <p onClick={() => dispatch({ type: "BUFFETS" })}>Buffets</p>
