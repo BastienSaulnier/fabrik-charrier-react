@@ -1,5 +1,6 @@
 const initialState = {
-  isMenuOpen: false
+  isMenuOpen: false,
+  filter: ""
 };
 
 function rootReducer(state = initialState, action) {
@@ -7,6 +8,14 @@ function rootReducer(state = initialState, action) {
   switch (action.type) {
     case "TOGGLE-MENU":
       return { isMenuOpen: !newState.isMenuOpen };
+    case "BUFFETS":
+      return { filter: "Buffets" };
+    case "TABLES":
+      return { filter: "Tables" };
+    case "TABLES_BASSES":
+      return { filter: "Tables Basses" };
+    case "SECRETAIRES":
+      return { filter: "Secretaires" };
     default:
       return newState;
   }
