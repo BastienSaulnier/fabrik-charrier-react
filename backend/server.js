@@ -25,14 +25,28 @@ app.get("/portfolio", (req, res) => {
 });
 
 app.get("/products", (req, res) => {
-  db.query(`SELECT * FROM products`, (err, results) => {
-    if (err) {
-      console.log("Error on GET /products !");
-      console.error(err);
-      return res.status(500).send("Sorry, we encountered an internal error.");
+  db.query(
+    `SELECT 
+      products.id, 
+      products.photo,
+      products.name,
+      products.pr_description,
+      products.price,
+      products.category,
+      products.workshop_advice,
+      lightbox_product.src,
+      lightbox_product.title,
+      lightbox_product.lb_description
+      FROM products LEFT JOIN lightbox_product ON products.lightbox_id = lightbox_product.id`,
+    (err, results) => {
+      if (err) {
+        console.log("Error on GET /products !");
+        console.error(err);
+        return res.status(500).send("Sorry, we encountered an internal error.");
+      }
+      return res.status(200).json(results);
     }
-    return res.status(200).json(results);
-  });
+  );
 });
 
 app.listen(serverPort, err => {
