@@ -24,9 +24,7 @@ app.get("/portfolio", (req, res) => {
   });
 });
 
-app.get("/products", (req, res) => {
-  db.query(
-    `SELECT 
+/*SELECT 
       products.id, 
       products.photo,
       products.name,
@@ -37,7 +35,19 @@ app.get("/products", (req, res) => {
       lightbox_product.src,
       lightbox_product.title,
       lightbox_product.lb_description
-      FROM products LEFT JOIN lightbox_product ON products.lightbox_id = lightbox_product.id`,
+      FROM products LEFT JOIN lightbox_product ON products.lightbox_id = lightbox_product.id*/
+
+app.get("/products", (req, res) => {
+  db.query(
+    `SELECT 
+      products.id, 
+      products.photo,
+      products.name,
+      products.pr_description,
+      products.price,
+      products.category,
+      products.workshop_advice
+      FROM products`,
     (err, results) => {
       if (err) {
         console.log("Error on GET /products !");

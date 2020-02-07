@@ -40,16 +40,24 @@ let ProductsList = [
     note: "Blublublu",
     lightboxGallery: [
       {
-        src: "/img/slider-produits/Table.jpg"
+        src: "/img/slider-produits/Table.jpg",
+        title: "Table-1",
+        description: "Table-1 description"
       },
       {
-        src: "/img/slider-produits/Table.jpg"
+        src: "/img/slider-produits/Table.jpg",
+        title: "Table-1",
+        description: "Table-1 description"
       },
       {
-        src: "/img/slider-produits/Table.jpg"
+        src: "/img/slider-produits/Table.jpg",
+        title: "Table-1",
+        description: "Table-1 description"
       },
       {
-        src: "/img/slider-produits/Table.jpg"
+        src: "/img/slider-produits/Table.jpg",
+        title: "Table-1",
+        description: "Table-1 description"
       }
     ]
   },

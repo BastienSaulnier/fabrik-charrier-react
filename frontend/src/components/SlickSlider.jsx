@@ -64,18 +64,15 @@ function SlickSlider() {
                   className="Slider-product"
                 >
                   <div className="Item">
-                    {/*<div className="ProductsCount">
-                      Nb produits : {products.length}
-                    </div>*/}
                     <div className="Item-image">
                       <img src={product.photo} alt="" />
                     </div>
 
                     {/*<Lightbox
-                    images={product.lightboxGallery}
-                    thumbnailWidth="40px"
-                    thumbnailHeight="40px"
-                  />*/}
+                      images={product.lightbox}
+                      thumbnailWidth="40px"
+                      thumbnailHeight="40px"
+                    />*/}
 
                     <div className="Item-body">
                       <div className="Item-title">
@@ -131,13 +128,6 @@ function SlickSlider() {
           <li>
             <p onClick={() => dispatch({ type: "SECRETAIRES" })}>Secretaires</p>
           </li>
-          {/*products.map(product => {
-            return (
-              <li key={product.id}>
-                <button href="#">{product.category}</button>
-              </li>
-            );
-          })*/}
         </ul>
       </aside>
     </div>
